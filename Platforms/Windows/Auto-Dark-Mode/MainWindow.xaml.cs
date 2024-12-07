@@ -21,16 +21,39 @@ namespace Auto_Dark_Mode
 
         private async void HyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
-            // ÓÊ¼şµÄ URI ·½°¸£¬°üº¬ÊÕ¼şÈËµØÖ·
-            string recipient = "mailto:hbeauwor@outlook.com"; // Ìæ»»ÎªÊµ¼ÊµÄÊÕ¼şÈËµØÖ·
+            // é‚®ä»¶çš„ URI æ–¹æ¡ˆï¼ŒåŒ…å«æ”¶ä»¶äººåœ°å€
+            string recipient = "mailto:hbeauwor@outlook.com"; // æ›¿æ¢ä¸ºå®é™…çš„æ”¶ä»¶äººåœ°å€
             var uri = new Uri(recipient);
 
-            // Æô¶¯ÓÊ¼şÓ¦ÓÃ
+            // å¯åŠ¨é‚®ä»¶åº”ç”¨
             await Launcher.LaunchUriAsync(uri);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            ContentDialog noWifiDialog = new ContentDialog
+            {
+                XamlRoot = rootPanel.XamlRoot,
+                Title = "æ·»åŠ åˆ‡æ¢æ¡ä»¶",
+                Content = "Check your connection and try again.",
+                PrimaryButtonText = "ä¿å­˜",
+                CloseButtonText = "å–æ¶ˆ"
+            };
+            
+            ContentDialogResult result = await noWifiDialog.ShowAsync();
         }
+    }
+
+
+    public class AppSettings
+    {
+        public bool AppIsEnable { get; set; }
+        public int AppColour { get; set; }
+    }
+
+    
+    public class ContentViewModel
+    {
+       
     }
 }
