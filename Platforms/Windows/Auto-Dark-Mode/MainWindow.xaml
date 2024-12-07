@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="Auto_Dark_Mode.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Auto_Dark_Mode"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="自动深色模式">
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="Base"/>
+    </Window.SystemBackdrop>
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                    Padding="8"
+                    Spacing="6">
+                <Image Source="Assets\StoreLogo.png"
+           Width="16"/>
+                <TextBlock Text="自动深色模式" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Spacing="8" Padding="18" Grid.Row="1">
+
+                <TextBlock Text="设置自动深色模式"
+                   Style="{StaticResource TitleTextBlockStyle}"
+                       FontWeight="Bold"/>
+
+                <TextBlock Text="自动设定"
+                   Style="{StaticResource BodyStrongTextBlockStyle}"/>
+
+                <Expander>
+                    <Expander.Resources>
+                        <Style TargetType="Expander">
+                            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </Expander.Resources>
+
+                    <Expander.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <FontIcon Glyph="&#xE8AB;"
+                                      Height="48"
+                                      Width="48"
+                                      FontSize="24"/>
+
+                            <TextBlock Text="设定自动切换深浅模式" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Expander.Header>
+
+                    <Expander.Content>
+                        <StackPanel Spacing="12">
+                            <Button Style="{StaticResource AccentButtonStyle}"
+                                    Click="Button_Click">
+                                <StackPanel Orientation="Horizontal" Spacing="4">
+                                    <FontIcon Glyph="&#xE710;"/>
+                                    <TextBlock Text="添加"/>
+                                </StackPanel>
+                            </Button>
+
+                            <ItemsView HorizontalAlignment="Stretch"
+                                       Background="{StaticResource LayerFillColorAlt}"
+                                       Height="50"
+                                       MaxHeight="150">
+    
+                            </ItemsView>
+                        </StackPanel>
+                    </Expander.Content>
+                </Expander>
+
+                <TextBlock Text="关于"
+                   Style="{StaticResource BodyStrongTextBlockStyle}"/>
+
+                <Expander>
+                    <Expander.Resources>
+                        <Style TargetType="Expander">
+                            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </Expander.Resources>
+
+                    <Expander.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <FontIcon Glyph="&#xE946;"
+                              Height="48"
+                              Width="48"
+                              FontSize="24"/>
+
+                            <TextBlock Text="关于此应用" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Expander.Header>
+
+                    <Expander.Content>
+                        <Grid Padding="0" RowSpacing="4">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <TextBlock Text="关于" Grid.Row="0"
+                                   VerticalAlignment="Center"
+                                       FontWeight="Bold"/>
+
+                            <StackPanel Orientation="Horizontal" Grid.Row="1" Spacing="8">
+                                <Image Source="Assets\StoreLogo.png" Height="64"/>
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="自动深浅模式"/>
+                                    <TextBlock Text="0.0.1 ShiT0Code 2024"
+                                           Style="{StaticResource CaptionTextBlockStyle}"/>
+                                    <HyperlinkButton Content="我们的GitHub仓库"
+                                                 NavigateUri="https://github.com/ShiT0Code/Auto-Dark-Mode"
+                                                 Padding="0"/>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <TextBlock Text="启用自自动深浅模式切换"
+                                   VerticalAlignment="Center"
+                                   Grid.Row="2"/>
+                            <ToggleSwitch Grid.Column="1" Grid.Row="2"/>
+
+                            <TextBlock Text="应用主题" Grid.Row="3"
+                                   VerticalAlignment="Center"/>
+                            <ComboBox Grid.Row="3" Grid.Column="1"
+                                   VerticalAlignment="Center"
+                                  SelectedIndex="0">
+                                <x:String>跟随系统</x:String>
+                                <x:String>浅色</x:String>
+                                <x:String>深色</x:String>
+                            </ComboBox>
+
+                            <TextBlock Text="联系我们" Grid.Row="4"
+                               VerticalAlignment="Center"
+                                   FontWeight="Bold"/>
+
+                            <HyperlinkButton Content="电子邮件：hbeauwor@outlook.com"
+                                             Click="HyperlinkButton_Click"
+                                             Grid.Row="5"
+                                             Grid.ColumnSpan="2"/>
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+            </StackPanel>
+        </Grid>
+ 
+    </ScrollViewer>   
+</Window>

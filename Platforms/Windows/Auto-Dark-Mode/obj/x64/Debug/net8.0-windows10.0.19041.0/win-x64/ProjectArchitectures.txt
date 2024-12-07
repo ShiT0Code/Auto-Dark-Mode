@@ -1,0 +1,1 @@
+C:\Users\hbeau\SourceCodes\Auto-Dark-Mode\Platforms\Windows\Auto-Dark-Mode\Auto-Dark-Mode.csproj;x64
