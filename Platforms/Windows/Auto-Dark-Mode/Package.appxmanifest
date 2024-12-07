@@ -9,14 +9,14 @@
 
   <Identity
     Name="9b340c14-2fe7-4687-ba36-c37425c9f029"
-    Publisher="CN=hbeau"
-    Version="1.0.0.0" />
+    Publisher="CN=ShiT0Code"
+    Version="0.0.1.1" />
 
   <mp:PhoneIdentity PhoneProductId="9b340c14-2fe7-4687-ba36-c37425c9f029" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Auto-Dark-Mode</DisplayName>
-    <PublisherDisplayName>hbeau</PublisherDisplayName>
+    <PublisherDisplayName>ShiT0Code</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
